@@ -1,5 +1,5 @@
 async function getTrendingMoviesPreview() {
-    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=' + API_KEY);
+    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=' + API_KEY + '&language=es');
     const data = await res.json();
 
     const movies = data.results;
@@ -21,5 +21,28 @@ async function getTrendingMoviesPreview() {
         trendingPreviewMoviesContainer.appendChild(movieContainer);
     });
 }
-
 getTrendingMoviesPreview();
+
+async function getCategoriesPreview() {
+    const res = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=' + API_KEY + '&language=es');
+    const data = await res.json();
+
+    const categories = data.genres;
+    categories.forEach(category => {
+        const categoriesPreviewContainer = document.querySelector('#categoriesPreview .categoriesPreview-list');
+
+        const categoryContainer = document.createElement('div');
+        categoryContainer.classList.add('category-container');
+
+        const categoryTitle = document.createElement('h3');
+        categoryTitle.classList.add('category-title');
+        categoryTitle.setAttribute('id', 'id' + category.id);
+        const categoryTitleText = document.createTextNode(category.name);
+
+        categoryTitle.appendChild(categoryTitleText);
+        categoryContainer.appendChild(categoryTitle);
+        categoriesPreviewContainer.appendChild(categoryContainer);
+    });
+}
+
+getCategoriesPreview();
