@@ -5,7 +5,6 @@ const api = axios.create({
     },
     params: {
         'api_key': API_KEY,
-        'language': 'es'
     },
 });
 
@@ -52,6 +51,3 @@ async function getCategegoriesPreview() {
         previewCategoriesContainer.appendChild(categoryContainer);
     });
 }
-
-getTrendingMoviesPreview();
-getCategegoriesPreview();
