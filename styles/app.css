@@ -186,42 +186,63 @@ footer {
     border-bottom-right-radius: 8px;
 }
 
-
-/* Trending */
 .trendingPreview-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 24px;
 }
 
 .trendingPreview-btn {
     border-radius: 8px;
     height: 32px;
-    width: 72px;
+    width: 120px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.trendingPreview-btn:hover {
+    background-color: #555;
 }
 
 .trendingPreview-movieList {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 241px;
+    height: 250px;
     padding-left: 24px;
     padding-bottom: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .trendingPreview-movieList .movie-container {
-    display: inline-block;
     margin-right: 8px;
-}
-
-.trendingPreview-movieList .movie-container .movie-img {
-    height: 225px;
-    min-height: 225px;
-    max-height: 225px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 150px;
     min-width: 150px;
     max-width: 150px;
 }
+
+.trendingPreview-movieList .movie-container .movie-img {
+    height: 225px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.trendingPreview-movieList .movie-container .movie-title {
+    margin-top: 8px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+}
+
 
 
 /* Categories */
@@ -427,50 +448,4 @@ footer {
 /* Navigation */
 .inactive {
     display: none;
-}
-
-/*Aportación Leonardo*/
-/* Estilos para pantallas grandes */
-@media screen and (min-width: 768px) {
-    .header-container--long {
-        height: 480px;
-    }
-
-    .category-container {
-        width: 45%;
-    }
-
-    .genericList-container .movie-container {
-        width: 47.5%;
-    }
-}
-
-/* Estilos para pantallas medianas */
-@media screen and (max-width: 767px) {
-    .header-container--long {
-        height: 320px;
-    }
-
-    .category-container {
-        width: 100%;
-    }
-
-    .genericList-container .movie-container {
-        width: 100%;
-    }
-}
-
-/* Estilos para pantallas pequeñas */
-@media screen and (max-width: 480px) {
-    .header-container--long {
-        height: 240px;
-    }
-
-    .category-container {
-        width: 100%;
-    }
-
-    .genericList-container .movie-container {
-        width: 100%;
-    }
 }
